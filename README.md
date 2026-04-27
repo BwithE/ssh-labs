@@ -47,8 +47,12 @@ Before starting any tasks, connect the the starting container `box1`
 ###  SSH into box1
 
 ```bash
-ssh -p 2222 hacker@localhost
+ssh -p 2222 user@localhost
 ```
+
+The username and password are currently the same on all containers.
+
+`user:password`
 
 ### Task 1 - Local Port Forward
 - On box1, create a local port forward using port 7654 that tunnels through box2 and redirects to box3 on port 7654.
