@@ -1,0 +1,72 @@
+services:
+  box1:
+    build: ./box1
+    container_name: box1
+    ports:
+      - "2222:22"
+    volumes:
+      - ssh_keys:/shared
+    networks:
+      net1:
+        ipv4_address: 192.168.100.10
+      net2:
+        ipv4_address: 172.16.200.10
+
+  box2:
+    build: ./box2
+    container_name: box2
+    volumes:
+      - ssh_keys:/shared
+    networks:
+      net2:
+        ipv4_address: 172.16.200.20
+      net3:
+        ipv4_address: 10.10.10.20
+
+  box3:
+    build: ./box3
+    container_name: box3
+    volumes:
+      - ssh_keys:/shared
+    networks:
+      net3:
+        ipv4_address: 10.10.10.30
+      net4:
+        ipv4_address: 10.20.20.30
+
+  box4:
+    build: ./box4
+    container_name: box4
+    volumes:
+      - ssh_keys:/shared
+    networks:
+      net4:
+        ipv4_address: 10.20.20.40
+
+volumes:
+  ssh_keys:
+
+networks:
+  net1:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.100.0/24
+
+  net2:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.200.0/24
+
+  net3:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.10.10.0/24
+
+  net4:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.20.20.0/24

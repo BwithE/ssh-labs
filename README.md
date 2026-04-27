@@ -50,17 +50,13 @@ Before starting any tasks, connect the the starting container `box1`
 ssh -p 2222 hacker@localhost
 ```
 
-All of the containers username's and passwords are the same.
-
-Make sure to SSH into box1 before starting the exercise.
-
 ### Task 1 - Local Port Forward
 - On box1, create a local port forward using port 7654 that tunnels through box2 and redirects to box3 on port 7654.
-- Once you've done that, on box1, netcat the localhost at 7654 to receive the flag.
+- Once you've done that, netcat your localhost at 7654 to receive the flag.
 
 ### Task 2 - Remote Port Forward
 - From box1, create a remote port forward on box2, utilizing port 9999 that will redirect traffic back to your local port of 4444.
-- Once you've done that, on box1, start a netcat listener on port 4444 to receive the flag.
+- Once you've done that, start a netcat listener on port 4444 to receive the flag.
 
 ### Task 3 - Multi-Hop Pivot to box4
 - Starting on box1, create a local port forward using port 4444 that will tunnel through box2 and redirect to box3 on port 22.
