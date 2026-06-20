@@ -17,7 +17,7 @@ start_containers() {
     $DC up -d
     echo -e "${GREEN}Lab ready.${NC}"
     echo "Connect using:"
-    echo "ssh -p 2222 hacker@localhost"
+    echo "ssh -p 2222 user@localhost"
 }
 
 stop_remove_containers() {
