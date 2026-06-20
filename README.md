@@ -8,6 +8,12 @@ This project provides Docker containers for practicing local and remote port for
 - **box1/Dockerfile, box2/Dockerfile, box3/Dockerfile, box4/Dockerfile**: Dockerfiles for building SSH-enabled containers.
 - **docker-compose.yml**: Defines networks, builds, and ports for the containers.
 - **ssh_labs_manager.sh**: Script to build, start, stop, and remove containers and images.
+
+### Dependencies 
+```
+sudo apt install docker.io docker-compose -y
+```
+
 ### Usage:
 Run the `ssh_labs_manager.sh` script with the following options:
 1. **Build images**: Build Docker images based on `docker-compose.yml`.
